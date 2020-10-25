@@ -21,12 +21,12 @@ createDefault();
 
 
 
-var Button = d3.select("#filter-btn");
+var button = d3.select("#filter-btn");
 var form = d3.select("#filters");
 var table = d3.select("#ufo-table");
 
 // Create event handlers 
-Button.on("click", runEnter);
+button.on("click", runEnter);
 form.on("submit", runEnter);
 
 // Complete the event handler function for the form
