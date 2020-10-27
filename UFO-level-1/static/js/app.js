@@ -22,19 +22,16 @@ createDefault();
 
 
 var button = d3.select("#filter-btn");
-var form = d3.select("#filters");
+// var form = d3.select("#filters");
 var table = d3.select("#ufo-table");
 
 // Create event handlers 
 button.on("click", runEnter);
-form.on("submit", runEnter);
+// form.on("submit", runEnter);
+
 
 // Complete the event handler function for the form
 function runEnter() {
-
-    // jQuery method for emptying the existing table each time
-    // a new query is performed
-    $("#tbody").empty();
     
     // Select the input element and get the raw HTML node
     var inputElement = d3.select("#datetime");
@@ -50,8 +47,6 @@ function runEnter() {
         return date.datetime == inputValue});
     console.log(filteredDate)
 
-    // Prevent the page from refreshing
-    d3.event.preventDefault();
 
     //append filtered infomation to show the result
     filteredDate.forEach(datas => {
@@ -64,6 +59,5 @@ function runEnter() {
             row.append("td").text(datas.durationMinutes);
             row.append("td").text(datas.comments);
         });
-    // jQuery method for emptying the input field after click
-    $("#datetime").val('');
+
 }
